@@ -30,3 +30,7 @@ gometalinter --install
 # Todo:
 - **Unit Tests!!!!!**
 - Find a way to disable the 'comment on exported functions' lint rule 
+- Add https support
+- data binding
+- basic rest auth
+- metrics
