@@ -22,3 +22,14 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+
+bin/
+.vscode/
+/pkg/
+/src/vendor
+!src/vendor/manifest
+
+#fix this
+/src
+!/src/fmillone/
