@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmillone/pocModule"
-
 	"fmillone/routes"
 
 	"github.com/codegangsta/negroni"
