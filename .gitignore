@@ -3,21 +3,6 @@
 *.a
 *.so
 
-# Folders
-_obj
-_test
-
-# Architecture specific extensions/prefixes
-*.[568vq]
-[568vq].out
-
-*.cgo1.go
-*.cgo2.c
-_cgo_defun.c
-_cgo_gotypes.go
-_cgo_export.*
-
-_testmain.go
 
 *.exe
 *.test
@@ -27,9 +12,11 @@ _testmain.go
 bin/
 .vscode/
 /pkg/
-/src/vendor
-!src/vendor/manifest
 
-#fix this
-/src
-!/src/fmillone/
+
+/src/vendor/*/
+/src/github.com/
+/src/golang.org/
+/src/gopkg.in/
+/src/sourcegraph.com/
+
