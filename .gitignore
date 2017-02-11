@@ -13,7 +13,6 @@ bin/
 .vscode/
 /pkg/
 
-
 /src/vendor/*/
 /src/github.com/
 /src/golang.org/

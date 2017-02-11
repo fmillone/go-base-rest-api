@@ -1,0 +1,38 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/codegangsta/negroni",
+			"repository": "https://github.com/codegangsta/negroni",
+			"vcs": "git",
+			"revision": "61dbefc515b4dede6eb2de7df1e54d49edce892d",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/go-zoo/bone",
+			"repository": "https://github.com/go-zoo/bone",
+			"vcs": "git",
+			"revision": "964b25230a16a70e93973d6d46886b26113ab654",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/jinzhu/inflection",
+			"repository": "https://github.com/jinzhu/inflection",
+			"vcs": "git",
+			"revision": "1c35d901db3da928c72a72d8458480cc9ade058f",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "gopkg.in/pg.v5",
+			"repository": "https://gopkg.in/pg.v5",
+			"vcs": "git",
+			"revision": "1434acdfd48e8b8e0dffcfd0eff1bdb42248ccde",
+			"branch": "master",
+			"notests": true
+		}
+	]    ssssssss
+	asdasssss
+}
