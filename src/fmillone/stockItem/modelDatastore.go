@@ -1,4 +1,4 @@
-package pocModule
+package stockItem
 
 import (
 	"fmillone/config"

@@ -13,13 +13,17 @@ type prodEnv struct {
 var once sync.Once
 
 func (env prodEnv) GetDB() *pg.DB {
-	once.Do(func() {
-		env.db = pg.Connect(&pg.Options{
-			User:     "golang",
-			Addr:     "192.168.0.105:5432",
-			Database: "golangrest",
+	if env.db == nil {
+		once = sync.Once{}
+		once.Do(func() {
+			env.db = pg.Connect(&pg.Options{
+				User:     "golang",
+				Addr:     "192.168.0.105:5432",
+				Database: "golangrest",
+			})
 		})
-	})
+	}
+
 	return env.db
 }
 

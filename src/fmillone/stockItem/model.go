@@ -10,7 +10,7 @@ type StockItem struct {
 
 //JSONView : DTO for marshaling
 type JSONView struct {
-	ID          int64  `json:"id"`
+	ID          int64  `json:"id,omitempty"`
 	Name        string `json:"name"`
 	Quantity    uint64 `json:"quantity"`
 	Description string `json:"description"`
@@ -23,5 +23,18 @@ func NewJSONView(item StockItem) JSONView {
 		Name:        item.Name,
 		Quantity:    item.Quantity,
 		Description: item.Description,
-	}asdas
+	}
+}
+
+func (model StockItem) Save() error {
+	return GetDatastore().Save(&model)
+}
+
+func (item JSONView) ToModel() StockItem {
+	return StockItem{
+		ID:          item.ID,
+		Name:        item.Name,
+		Quantity:    item.Quantity,
+		Description: item.Description,
+	}
 }

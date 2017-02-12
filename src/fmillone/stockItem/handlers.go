@@ -10,8 +10,6 @@ import (
 	"fmt"
 
 	"io"
-
-	"github.com/go-zoo/bone"
 )
 
 func extractView(body io.Reader) *JSONView {
@@ -27,16 +25,26 @@ func extractView(body io.Reader) *JSONView {
 
 func createStockItem(w http.ResponseWriter, r *http.Request) {
 	item := extractView(r.Body)
-	fmt.Println("item", item)
-	fmt.Fprintln(w, item)
+	model := item.ToModel()
+
+	if err := model.Save(); err != nil {
+		panic(err)
+
+	}
+
+	m := utils.Message{"Model saved"}
+	encodedMessage := utils.ToJSONOrPanic(m)
+	if _, err := fmt.Fprint(w, encodedMessage); err != nil {
+		panic(err)
+	}
 }
 
-//LoadModule ...
-func LoadModule(mux *bone.Mux) {
-	routes.SetMux(mux)
-	routes.AddNewRoute(
-		utils.Post,
-		"/item",
-		createStockItem,
-	)
+func GetRoutes() []routes.Route {
+	return []routes.Route{
+		routes.Route{
+			utils.Post,
+			"/item",
+			createStockItem,
+		},
+	}
 }
